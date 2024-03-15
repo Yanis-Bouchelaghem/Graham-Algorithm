@@ -3,11 +3,11 @@
 
 int main()
 {
-
-    Game game{settings::screenWidth,
-              settings::screenHeight,
-              settings::fps,
-              "Tetris Raylib" };
+    using namespace settings;
+    Game game{screenWidth,
+              screenHeight,
+              fps,
+              windowTitle };
 
     while (!game.GameShouldClose())
     {

@@ -15,6 +15,20 @@ public:
 	constexpr void SetX(T x_in) { x = x_in;};
 	constexpr void SetY(T y_in) { y = y_in;};
 public:
+	constexpr bool operator<(const Vec2& rhs) const
+	{
+		if (y != rhs.y)
+			return y < rhs.y;
+		else
+			return x < rhs.x;
+	}
+	constexpr bool operator>(const Vec2& rhs) const
+	{
+		if (y != rhs.y)
+			return y > rhs.y;
+		else
+			return x > rhs.x;
+	}
 	constexpr bool operator==(const Vec2& rhs) const
 	{
 		return (x == rhs.x && y == rhs.y);

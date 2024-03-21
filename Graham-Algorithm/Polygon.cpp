@@ -24,8 +24,14 @@ int Polygon::GetPointCount() const
 void Polygon::Draw(Color color) const
 {
 	auto points = edge.GetPoints();
-	for (int i = 1; i < edge.GetPointCount(); ++i)
+	for (int i = 1; i < points.size(); ++i)
 	{
 		raycpp::DrawLine(points[i-1], points[i], color);
 	}
+	if (points.size() >= 2)
+	{
+		//Draw a line between the first and the last
+		raycpp::DrawLine(points[0], points[points.size() - 1], color);
+	}
+
 }

@@ -39,6 +39,7 @@ void Game::Update()
 
 void Game::Draw()
 {
+	ClearBackground(BLACK);
 	pointCloud.Draw(5, RAYWHITE);
 	convexEdge.Draw(RED);
 }

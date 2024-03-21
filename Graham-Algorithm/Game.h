@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "PointCloud.h"
+#include "Polygon.h"
 
 class Game
 {
@@ -16,4 +17,5 @@ private:
 	void Draw();
 private:
 	PointCloud pointCloud;
+	Polygon convexEdge;
 };

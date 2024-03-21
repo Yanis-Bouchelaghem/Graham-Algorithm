@@ -6,11 +6,15 @@ void raycpp::DrawCircle(Point2D<int> pos, float radius, Color color)
 		pos.GetX() - radius < GetScreenWidth() && pos.GetY() - radius < GetScreenHeight()); //If assertion triggers : Trying to draw outisde of the screen
 	DrawCircle(pos.GetX(), pos.GetY(), radius, color);
 }
+void raycpp::DrawLine(Point2D<int> startPos, Point2D<int> endPos, Color color)
+{
+	::DrawLine(startPos.GetX(), startPos.GetY(), endPos.GetX(), endPos.GetY(), color);
+}
 void raycpp::DrawRectangle(Point2D<int> pos, Point2D<int> widthHeight, Color color)
 {
 	assert(pos.GetX() >= 0 && pos.GetY() >= 0 &&
 		   pos.GetX() < GetScreenWidth() && pos.GetY() < GetScreenHeight()); //If assertion triggers : Trying to draw outisde of the screen
-	DrawRectangle(pos.GetX(),pos.GetY(),widthHeight.GetX(),widthHeight.GetY(),color);
+	::DrawRectangle(pos.GetX(),pos.GetY(),widthHeight.GetX(),widthHeight.GetY(),color);
 }
 
 void raycpp::DrawRectangleLinesEx(Point2D<int> pos, Point2D<int> widthHeight, int lineThick, Color color)
@@ -18,7 +22,7 @@ void raycpp::DrawRectangleLinesEx(Point2D<int> pos, Point2D<int> widthHeight, in
 	assert(pos.GetX() >= 0 && pos.GetY() >= 0 &&
 		pos.GetX() < GetScreenWidth() && pos.GetY() < GetScreenHeight()); //If assertion triggers : Trying to draw outisde of the screen
 	assert(lineThick > 0); //If assertion triggers : line thickness is less than 1
-	DrawRectangleLinesEx({(float)pos.GetX(),(float)pos.GetY(), (float)widthHeight.GetX(), (float)widthHeight.GetY()}, (float)lineThick, color);
+	::DrawRectangleLinesEx({(float)pos.GetX(),(float)pos.GetY(), (float)widthHeight.GetX(), (float)widthHeight.GetY()}, (float)lineThick, color);
 }
 
 bool raycpp::IsMouseButtonPressed(int button)

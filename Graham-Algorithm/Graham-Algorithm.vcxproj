@@ -133,10 +133,12 @@
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PointCloud.cpp" />
     <ClCompile Include="raylibCpp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="PointCloud.h" />
     <ClInclude Include="raylibCpp.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Point2D.h" />

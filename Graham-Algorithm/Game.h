@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "PointCloud.h"
 
 class Game
 {
@@ -13,4 +14,6 @@ public:
 private:
 	void Update();
 	void Draw();
+private:
+	PointCloud pointCloud;
 };

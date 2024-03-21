@@ -7,6 +7,11 @@ Game::Game(int width, int height, int fps, std::string title)
 	assert(!GetWindowHandle());	//If assertion triggers : Window is already opened
 	SetTargetFPS(fps);
 	InitWindow(width, height, title.c_str());
+	pointCloud.AddPoint({300, 200});
+	pointCloud.AddPoint({300, 150});
+	pointCloud.AddPoint({100, 240});
+	pointCloud.AddPoint({500, 490});
+	pointCloud.AddPoint({320, 00});
 }
 
 Game::~Game() noexcept
@@ -34,7 +39,8 @@ void Game::Update()
 
 void Game::Draw()
 {
-	raycpp::DrawCircle({100,100},20, RAYWHITE);
+
+	pointCloud.Draw(5, RAYWHITE);
 }
 
 

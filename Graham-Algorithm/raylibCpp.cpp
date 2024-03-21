@@ -2,8 +2,8 @@
 #include <assert.h>
 void raycpp::DrawCircle(Point2D<int> pos, float radius, Color color)
 {
-	assert(pos.GetX() - radius >= 0 && pos.GetY() - radius >= 0 &&
-		pos.GetX() + radius < GetScreenWidth() && pos.GetY() + radius < GetScreenHeight()); //If assertion triggers : Trying to draw outisde of the screen
+	assert(pos.GetX() + radius >= 0 && pos.GetY() + radius >= 0 &&
+		pos.GetX() - radius < GetScreenWidth() && pos.GetY() - radius < GetScreenHeight()); //If assertion triggers : Trying to draw outisde of the screen
 	DrawCircle(pos.GetX(), pos.GetY(), radius, color);
 }
 void raycpp::DrawRectangle(Point2D<int> pos, Point2D<int> widthHeight, Color color)

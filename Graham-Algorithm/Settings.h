@@ -1,5 +1,5 @@
 #pragma once
-#include "Vec2.h"
+
 namespace settings
 {
 	//Window settings

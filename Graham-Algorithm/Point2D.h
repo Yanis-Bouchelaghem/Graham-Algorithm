@@ -1,11 +1,11 @@
 #pragma once
 
 template <typename T>
-class Vec2
+class Point2D
 {
 public:
-	Vec2() = default;
-	constexpr Vec2(T x, T y)
+	Point2D() = default;
+	constexpr Point2D(T x, T y)
 		:
 		x(x),
 		y(y)
@@ -15,61 +15,61 @@ public:
 	constexpr void SetX(T x_in) { x = x_in;};
 	constexpr void SetY(T y_in) { y = y_in;};
 public:
-	constexpr bool operator<(const Vec2& rhs) const
+	constexpr bool operator<(const Point2D& rhs) const
 	{
 		if (y != rhs.y)
 			return y < rhs.y;
 		else
 			return x < rhs.x;
 	}
-	constexpr bool operator>(const Vec2& rhs) const
+	constexpr bool operator>(const Point2D& rhs) const
 	{
 		if (y != rhs.y)
 			return y > rhs.y;
 		else
 			return x > rhs.x;
 	}
-	constexpr bool operator==(const Vec2& rhs) const
+	constexpr bool operator==(const Point2D& rhs) const
 	{
 		return (x == rhs.x && y == rhs.y);
 	}
-	constexpr bool operator!=(const Vec2& rhs) const
+	constexpr bool operator!=(const Point2D& rhs) const
 	{
 		return !(*this == rhs);
 	}
-	constexpr Vec2 operator+(const Vec2& rhs) const
+	constexpr Point2D operator+(const Point2D& rhs) const
 	{
 		return {x + rhs.x, y + rhs.y};
 	}
-	constexpr Vec2 operator+(const int rhs) const
+	constexpr Point2D operator+(const int rhs) const
 	{
 		return {x + rhs, y + rhs};
 	}
-	constexpr Vec2& operator+=(const Vec2& rhs)
+	constexpr Point2D& operator+=(const Point2D& rhs)
 	{
 		 return *this = *this + rhs;
 	}
-	constexpr Vec2 operator-(const Vec2& rhs) const
+	constexpr Point2D operator-(const Point2D& rhs) const
 	{
 		return {x - rhs.x, y - rhs.y};
 	}
-	constexpr Vec2 operator-(const int rhs) const
+	constexpr Point2D operator-(const int rhs) const
 	{
 		return { x - rhs, y - rhs};
 	}
-	constexpr Vec2& operator-=(const Vec2& rhs)
+	constexpr Point2D& operator-=(const Point2D& rhs)
 	{
 		return *this = *this - rhs;
 	}
-	constexpr Vec2 operator*(const Vec2& rhs) const
+	constexpr Point2D operator*(const Point2D& rhs) const
 	{
 		return {x * rhs.x, y * rhs.y};
 	}
-	constexpr Vec2 operator*(const int rhs) const
+	constexpr Point2D operator*(const int rhs) const
 	{
 		return { x * rhs, y * rhs };
 	}
-	constexpr Vec2& operator*=(const Vec2& rhs)
+	constexpr Point2D& operator*=(const Point2D& rhs)
 	{
 		return *this = *this * rhs;
 	}

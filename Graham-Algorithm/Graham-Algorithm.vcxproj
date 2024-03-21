@@ -131,15 +131,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Window.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PointCloud.cpp" />
+    <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="raylibCpp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="PointCloud.h" />
+    <ClInclude Include="Polygon.h" />
     <ClInclude Include="raylibCpp.h" />
     <ClInclude Include="Settings.h" />
-    <ClInclude Include="Vec2.h" />
+    <ClInclude Include="Point2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

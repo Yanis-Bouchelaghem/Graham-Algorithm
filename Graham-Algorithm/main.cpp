@@ -1,17 +1,17 @@
-#include "Game.h"
+#include "Window.h"
 #include "Settings.h"
 
 int main()
 {
+	using namespace settings;
+	Window game{screenWidth,
+			  screenHeight,
+			  fps,
+			  windowTitle };
 
-    Game game{settings::screenWidth,
-              settings::screenHeight,
-              settings::fps,
-              "Tetris Raylib" };
-
-    while (!game.GameShouldClose())
-    {
-        game.Tick();
-    }
+	while (!game.GameShouldClose())
+	{
+		game.Tick();
+	}
 	return 0;
 }

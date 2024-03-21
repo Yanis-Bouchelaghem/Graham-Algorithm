@@ -34,6 +34,7 @@ void Game::Update()
 
 void Game::Draw()
 {
+	raycpp::DrawCircle({100,100},20, RAYWHITE);
 }
 
 

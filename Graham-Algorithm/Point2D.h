@@ -15,7 +15,9 @@ public:
 	{
 		return std::atan2(y - otherPoint.y, x - otherPoint.x);
 	}
-	static constexpr float crossProduct(const Point2D<T>& p0, const Point2D<T>& p1, const Point2D<T>& p2) {
+	static constexpr float crossProduct(const Point2D<T>& p0,
+										const Point2D<T>& p1,
+										const Point2D<T>& p2) {
 		return (p1.x - p0.x) * (p2.y - p0.y) - (p1.y - p0.y) * (p2.x - p0.x);
 	}
 public:

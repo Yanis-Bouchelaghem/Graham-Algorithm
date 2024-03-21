@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "Game.h"
+#include "Window.h"
 #include "raylibCpp.h"
 #include "Settings.h"
 Window::Window(int width, int height, int fps, std::string title)

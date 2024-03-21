@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "Window.h"
 #include "Settings.h"
 
 int main()

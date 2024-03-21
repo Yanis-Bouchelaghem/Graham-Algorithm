@@ -1,8 +1,10 @@
 #include "Polygon.h"
+#include <stack>
+#include <assert.h>
 
-Polygon::Polygon(const PointCloud& edge)
+Polygon::Polygon(const PointCloud& hull)
 	:
-	hull(edge)
+	hull(hull)
 {
 }
 
@@ -36,11 +38,39 @@ void Polygon::Draw(Color color) const
 
 }
 
-Polygon Polygon::GrahamAlgorithm(const PointCloud& pointCloud)
+Polygon Polygon::GrahamAlgorithm(PointCloud pointCloud)
 {
-	//Sort the cloud points using le tri polaire
-	
+    assert(pointCloud.GetPointCount() >= 3);
+	//Sort the cloud points using polar sort
+	pointCloud.PolarSort();
+    auto& points = pointCloud.GetPoints();
 	//Apply Graham algorithm
-	//Return a polygon
-	return Polygon();
+    // Initialize the stack with the first three points
+    std::stack<Point2D<int>> stack;
+    stack.push(points[0]);
+    stack.push(points[1]);
+    stack.push(points[2]);
+
+    // Process remaining points
+    for (size_t i = 3; i < points.size(); ++i) {
+        while (stack.size() >= 2) {
+            Point2D<int> top = stack.top();
+            stack.pop();
+            Point2D<int> secondTop = stack.top();
+            if (Point2D<int>::crossProduct(secondTop, top, points[i]) > 0) {
+                stack.push(top);
+                break;
+            }
+        }
+        stack.push(points[i]);
+    }
+
+    // Transfer points from stack to result vector
+    Polygon result;
+    while (!stack.empty()) {
+        result.AddPoint(stack.top());
+        stack.pop();
+    }
+
+	return result;
 }

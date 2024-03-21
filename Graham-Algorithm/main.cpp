@@ -3,15 +3,15 @@
 
 int main()
 {
-    using namespace settings;
-    Game game{screenWidth,
-              screenHeight,
-              fps,
-              windowTitle };
+	using namespace settings;
+	Game game{screenWidth,
+			  screenHeight,
+			  fps,
+			  windowTitle };
 
-    while (!game.GameShouldClose())
-    {
-        game.Tick();
-    }
+	while (!game.GameShouldClose())
+	{
+		game.Tick();
+	}
 	return 0;
 }

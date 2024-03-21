@@ -7,13 +7,13 @@ class Polygon
 {
 public:
 	Polygon() = default;
-	Polygon(const PointCloud& edge);
+	Polygon(const PointCloud& hull);
 public:
 	void AddPoint(const Point2D<int>& point);
 	void RemovePoint(int index);
 	int GetPointCount() const;
 	void Draw(Color color) const;
-	static Polygon GrahamAlgorithm(const PointCloud& pointCloud);
+	static Polygon GrahamAlgorithm(PointCloud pointCloud);
 private:
 	PointCloud hull;
 };

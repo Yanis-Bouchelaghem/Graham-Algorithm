@@ -34,7 +34,11 @@ void Game::Update()
 	{
 		pointCloud.AddPoint(raycpp::GetMousePosition());
 		pointCloud.PolarSort();
-		convexEdge = Polygon(pointCloud);
+		if (pointCloud.GetPointCount() >= 3)
+		{
+			convexEdge = Polygon::GrahamAlgorithm(pointCloud);
+
+		}
 	}
 }
 

@@ -4,7 +4,7 @@
 int main()
 {
 	using namespace settings;
-	Game game{screenWidth,
+	Window game{screenWidth,
 			  screenHeight,
 			  fps,
 			  windowTitle };

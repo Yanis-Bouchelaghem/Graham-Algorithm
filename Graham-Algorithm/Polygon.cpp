@@ -65,7 +65,7 @@ Polygon Polygon::GrahamAlgorithm(PointCloud pointCloud)
         stack.push(points[i]);
     }
 
-    // Transfer points from stack to result vector
+    // Transfer points from stack to result polygon
     Polygon result;
     while (!stack.empty()) {
         result.AddPoint(stack.top());

@@ -20,3 +20,14 @@ void raycpp::DrawRectangleLinesEx(Point2D<int> pos, Point2D<int> widthHeight, in
 	assert(lineThick > 0); //If assertion triggers : line thickness is less than 1
 	DrawRectangleLinesEx({(float)pos.GetX(),(float)pos.GetY(), (float)widthHeight.GetX(), (float)widthHeight.GetY()}, (float)lineThick, color);
 }
+
+bool raycpp::IsMouseButtonPressed(int button)
+{
+	return ::IsMouseButtonPressed(button);
+}
+
+Point2D<int> raycpp::GetMousePosition()
+{
+	auto position = ::GetMousePosition();
+	return {int(position.x), int(position.y)};
+}

@@ -35,11 +35,14 @@ void Game::Tick()
 
 void Game::Update()
 {
+	if (raycpp::IsMouseButtonPressed(MouseButton::MOUSE_BUTTON_LEFT))
+	{
+		pointCloud.AddPoint(raycpp::GetMousePosition());
+	}
 }
 
 void Game::Draw()
 {
-
 	pointCloud.Draw(5, RAYWHITE);
 }
 

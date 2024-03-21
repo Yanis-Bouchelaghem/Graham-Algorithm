@@ -11,7 +11,7 @@ public:
 	void RemovePoint(int index);
 	int GetPointCount() const;
 	const std::vector<Point2D<int>>& GetPoints() const;
-	const void Draw(int radius, Color color) const;
+	const void Draw(float radius, Color color) const;
 private:
 	std::vector<Point2D<int>> points;
 };

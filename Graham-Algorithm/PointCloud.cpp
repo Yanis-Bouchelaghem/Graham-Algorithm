@@ -22,7 +22,7 @@ const std::vector<Point2D<int>>& PointCloud::GetPoints() const
     return points;
 }
 
-const void PointCloud::Draw(int radius, Color color) const
+const void PointCloud::Draw(float radius, Color color) const
 {
     for (const Point2D<int>& point : points)
     {

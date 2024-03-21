@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 
 template <typename T>
 class Point2D
@@ -10,6 +11,11 @@ public:
 		x(x),
 		y(y)
 	{}
+	constexpr float PolarAngle(const Point2D<T>& otherPoint) const
+	{
+		return std::atan2(y - otherPoint.y, x - otherPoint.x);
+	}
+public:
 	constexpr T GetX() const {return x;};
 	constexpr T GetY() const {return y;};
 	constexpr void SetX(T x_in) { x = x_in;};

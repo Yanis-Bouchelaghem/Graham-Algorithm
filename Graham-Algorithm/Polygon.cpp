@@ -2,28 +2,28 @@
 
 Polygon::Polygon(const PointCloud& edge)
 	:
-	edge(edge)
+	hull(edge)
 {
 }
 
 void Polygon::AddPoint(const Point2D<int>& point)
 {
-	edge.AddPoint(point);
+	hull.AddPoint(point);
 }
 
 void Polygon::RemovePoint(int index)
 {
-	edge.RemovePoint(index);
+	hull.RemovePoint(index);
 }
 
 int Polygon::GetPointCount() const
 {
-	return edge.GetPointCount();
+	return hull.GetPointCount();
 }
 
 void Polygon::Draw(Color color) const
 {
-	auto points = edge.GetPoints();
+	auto points = hull.GetPoints();
 	for (int i = 1; i < points.size(); ++i)
 	{
 		raycpp::DrawLine(points[i-1], points[i], color);
@@ -34,4 +34,13 @@ void Polygon::Draw(Color color) const
 		raycpp::DrawLine(points[0], points[points.size() - 1], color);
 	}
 
+}
+
+Polygon Polygon::GrahamAlgorithm(const PointCloud& pointCloud)
+{
+	//Sort the cloud points using le tri polaire
+	
+	//Apply Graham algorithm
+	//Return a polygon
+	return Polygon();
 }

@@ -12,6 +12,7 @@ public:
 	int GetPointCount() const;
 	const std::vector<Point2D<int>>& GetPoints() const;
 	const void Draw(float radius, Color color) const;
+	void PolarSort();
 private:
 	std::vector<Point2D<int>> points;
 };

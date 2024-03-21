@@ -33,6 +33,7 @@ void Game::Update()
 	if (raycpp::IsMouseButtonPressed(MouseButton::MOUSE_BUTTON_LEFT))
 	{
 		pointCloud.AddPoint(raycpp::GetMousePosition());
+		pointCloud.PolarSort();
 		convexEdge = Polygon(pointCloud);
 	}
 }

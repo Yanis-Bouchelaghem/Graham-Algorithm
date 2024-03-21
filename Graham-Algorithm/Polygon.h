@@ -13,6 +13,7 @@ public:
 	void RemovePoint(int index);
 	int GetPointCount() const;
 	void Draw(Color color) const;
+	static Polygon GrahamAlgorithm(const PointCloud& pointCloud);
 private:
-	PointCloud edge;
+	PointCloud hull;
 };
